@@ -1,0 +1,44 @@
+<!--
+ * @Description: Jsonp
+ * @Author: Moobye
+ * @Date: 2020-09-15 17:00:37
+ * @LastEditTime: 2020-09-15 17:14:04
+ * @LastEditors: Moobye
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <!-- <script type="text/javascript" src="./remote.js"></script> -->
+  </head>
+  <body>
+    <script type="text/javascript">
+      // var localHandler = function(data){
+      //     alert('我是本地函数，可以被跨域的remote.js文件调用，远程js带来的数据是：' + data.result);
+      // };
+      var flightHandler = function(data){
+          alert('你查询的航班结果是：票价 ' + data.price + ' 元，' + '余票 ' + data.tickets + ' 张。');
+      };
+      // 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）
+      var url = "./remote.js?code=CA1998&callback=flightHandler";
+      // 创建script标签，设置其属性
+      // var script = document.createElement('script');
+      // script.setAttribute('src', url);
+      // // 把script标签加入head，此时调用开始
+      // document.getElementsByTagName('head')[0].appendChild(script); 
+
+      function jsonp(url, callback, success){
+        let script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.type = 'text/javascript'
+        window[callback] = function (data) {
+          success && success(data)
+        }
+        console.log('document.getElementsByTagName>> ', document.body);
+        document.body.appendChild(script)
+      }
+      jsonp(url, 'flightHandler', flightHandler)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!--
+ * @Description: grid 网格布局基础
+ * @Author: Moobye
+ * @Date: 2020-12-16 10:34:11
+ * @LastEditTime: 2021-02-26 11:22:57
+ * @LastEditors: Moobye
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网格布局基础</title>
+  <style>
+    .grid-box{
+      display: grid;
+      /* grid-template-columns: 100px 100px 100px; */
+      /* grid-template-columns: repeat(3, 100px); */
+      /* grid-template-columns: repeat(auto-fill, 100px); */
+      grid-template-columns: 1fr 3fr;
+      /* grid-template-rows: 100px 100px 100px; */
+      /* grid-template-rows: repeat(3, 100px); */
+      /* grid-gap: 10px; */
+      /* gap: 10px; */
+      /* grid-column-gap: 10px; */
+      /* grid-row-gap: 10px; */
+      column-gap: 10px;
+      row-gap: 10px;
+      grid-template-areas: 'a . c'
+                     'd . f'
+                     'g . i';
+    }
+    .grid-item{
+      border:1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <H1>网格布局基础</H1>
+  <div class="grid-box">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+  </div>
+  <script>
+    const divView = document.getElementsByClassName('grid-box')[0]
+    let obj = {}
+    for(const key in divView) {
+      obj[key] = divView[key]
+    }
+    console.log(obj)
+  </script>
+</body>
+</html>

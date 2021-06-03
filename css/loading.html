@@ -1,0 +1,115 @@
+<!--
+ * @Description: 样式篇：loading
+ * @Author: Moobye
+ * @Date: 2020-09-07 11:14:47
+ * @LastEditTime: 2020-09-07 14:37:48
+ * @LastEditors: Moobye
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>loading圈</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      border: 1px solid #ddd;
+    }
+
+    .circle,
+    .circle2,
+    .circle3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      margin: auto;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #ddd;
+    }
+
+    .circle::after,
+    .circle2::after,
+    .circle3::after {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: #ddd;
+      border-radius: 100%;
+    }
+
+    .circle {
+      animation: circleBox 15s ease-in-out infinite;
+    }
+
+    .circle2 {
+      transform: rotate(24deg);
+      animation: circleBox2 15s ease-in-out infinite;
+    }
+
+    .circle3 {
+      transform: rotate(48deg);
+      animation: circleBox3 15s ease-in-out infinite;
+    }
+
+    @keyframes circleBox {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    @keyframes circleBox2 {
+      from {
+        transform: rotate(24deg);
+      }
+
+      to {
+        transform: rotate(-336deg);
+      }
+    }
+
+    @keyframes circleBox3 {
+      from {
+        transform: rotate(48deg);
+      }
+
+      to {
+        transform: rotate(-312deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <span class="circle"></span>
+    <span class="circle2"></span>
+    <span class="circle3"></span>
+  </div>
+
+</body>
+
+</html>

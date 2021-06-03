@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- require.js -->
+  <script
+    data-main="main"
+    src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.js"
+  ></script> 
+  <script lang="text/javascript" src="./modules.js"></script>
+  <script lang="text/javascript">
+    console.log(myModule.set('模块 屙屎'))
+    console.log(myModule.get())
+    myModule.data = "xxxx" // 无法修改
+    console.log(myModule.get()) // 模块 屙屎
+  </script>
+</body>
+</html>

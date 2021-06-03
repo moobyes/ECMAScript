@@ -1,0 +1,28 @@
+*{
+  margin:0;
+  padding:0;
+}
+.wrap{
+  padding:20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.left-wrap, .right-wrap{
+  position: relative;
+  height:100vh;
+  border:1px dashed #333;
+  flex: 1;
+}
+
+.right-wrap{
+  padding:20px;
+  margin-left:20px;
+  color:#d6d6d6;
+}
+.move{
+  position:absolute;
+  width:100px;
+  height:100px;
+  background:gray;
+}

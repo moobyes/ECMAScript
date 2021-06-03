@@ -1,0 +1,29 @@
+{
+  "roomPriceInfoList":[
+      {
+          "roomTypeID":4594330,
+          "roomName":" (ID:4594330) 商务单间                现付                        ",
+          "hotelID":741958,
+          "payType":"FG",
+          "currency":"RMB",
+          "mealNum":"-100",
+          "weekDayIndex":"1111111",
+          "costPrice":134.3,
+          "salePrice":158,
+          "commissionRate":0.15,
+          "commissionValue":23.7,
+          "serviceFeeRate":0,
+          "refRoomIDs":[
+
+          ]
+      }
+  ],
+  "dateRangeInfo":[
+      {
+          "startDate":"2020-07-21",
+          "endDate":"2020-07-21"
+      }
+  ],
+  "pageType":"T",
+  "priceChangeMode":2
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style type="text/css">
+    #dragTarget {
+      width: 488px;
+      height: 70px;
+      padding: 10px;
+      border: 1px solid #aaaaaa;
+    }
+    .drag{
+      width:550px;
+      height:70px;
+      border: 1px solid #dddfff;
+    }
+  </style>
+  <script type="text/javascript">
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      console.log('ev :>> ', ev);
+      ev.dataTransfer.setData("Text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("Text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+</head>
+
+<body>
+  <p>请把 W3School 的图片拖放到矩形中：</p>
+  <div id="dragTarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br />
+  <!-- <img id="dragImg" src="http://www.w3school.com.cn/i/w3school_banner.gif" draggable="true" ondragstart="drag(event)" /> -->
+  <div id="dragDiv0" class="drag" draggable="true" ondragstart="drag(event)">
+    拖拽0
+  </div>
+  <div id="dragDiv1" class="drag" draggable="true" ondragstart="drag(event)">
+    拖拽1
+  </div>
+  <div id="dragDiv2" class="drag" draggable="true" ondragstart="drag(event)">
+    拖拽2
+  </div>
+  <div id="dragDiv3" class="drag" draggable="true" ondragstart="drag(event)">
+    拖拽3
+  </div>
+  <div id="dragDiv4" class="drag" draggable="true" ondragstart="drag(event)">
+    拖拽4
+  </div>
+</body>
+
+</html>

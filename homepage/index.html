@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+
+<body>
+
+  <div id="root" style="color: blue">test</div>
+
+  <script>
+    setTimeout(() => {
+      root.style.color = "red";
+      setTimeout(() => {
+        console.log("setTimeout");
+      });
+
+      requestAnimationFrame(() => {
+        debugger;
+        console.log(root.style.color);
+        console.log("requestAnimationFrame");
+      });
+
+      Promise.resolve().then(() => {
+        console.log("Promise");
+      });
+
+      root.style.color = "red";
+    }, 1000);
+  </script>
+
+</body>
+
+</html>

@@ -2,7 +2,7 @@
  * @Description: http
  * @Author: Moobye
  * @Date: 2021-04-28 18:00:04
- * @LastEditTime: 2021-05-28 18:19:28
+ * @LastEditTime: 2021-07-19 10:04:55
  * @LastEditors: Moobye
  */
 
@@ -46,7 +46,7 @@ window.onload = function() {
   function getImg() {
     //动态配置二维码图片地址
     var imgSrc =
-      window.location.href.indexOf("m.oyohotels") >= 0
+      window.location.href.indexOf("m.moobye") >= 0
         ? "./imgs/1550739019.png"
         : "./imgs/1548731396.png";
     document.getElementById("qrcodeImg").src = imgSrc;
@@ -56,7 +56,7 @@ window.onload = function() {
 //根据系统类型获取最新URL
 function getNewestUrl() {
   const env = getEnvByHost();
-  const url = `https://gateway${env}.oyohotels.cn/mobile/api/oyo-cms/getNewestAppVersion`;
+  const url = `https://gateway${env}.moobye.cn/mobile/api/moobye-cms/getNewestAppVersion`;
   var params = { firstChannel: "ANDROID" };
   if (jsBridge.isIos) {
     params = { firstChannel: "IOS" };
@@ -90,16 +90,16 @@ function getEnvByHost(host) {
   var env = "";
   const h = host || location.host;
   switch (h) {
-    case "m-dev.oyohotels.cn":
+    case "m-dev.moobye.cn":
       env = "-dev";
       break;
-    case "m-test.oyohotels.cn":
+    case "m-test.moobye.cn":
       env = "-test";
       break;
-    case "m-uat.oyohotels.cn":
+    case "m-uat.moobye.cn":
       env = "-uat";
       break;
-    case "m.oyohotels.cn":
+    case "m.moobye.cn":
       env = "";
       break;
     default:

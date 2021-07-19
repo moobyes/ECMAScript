@@ -2,7 +2,7 @@
  * @Description: 面试题
  * @Author: Moobye
  * @Date: 2021-01-31 21:22:38
- * @LastEditTime: 2021-02-01 10:28:16
+ * @LastEditTime: 2021-06-21 10:57:07
  * @LastEditors: Moobye
  */
 
@@ -36,7 +36,7 @@ function getAllCombine(array, n, sum, temp) {
     const current = array.shift();
     current < sum && temp.push(current);
     console.log("temp1 :>> ", temp);
-    const result = getAllCombin(array, n, sum, temp); // 这里拿到返回的值，为false就在后面将最后一位pop出去
+    const result = getAllCombine(array, n, sum, temp); // 这里拿到返回的值，为false就在后面将最后一位pop出去
     console.log("result1:>> ", result);
     if (result) {
       console.log("result2 :>> ", result);
@@ -64,7 +64,7 @@ function getResult(data, n, sum) {
   }
 }
 
-function getAllCombin2(array, n, sum) {
+function getAllCombine2(array, n, sum) {
   let res = null;
   function backtrack(nums, track, sum1) {
     if (track.length === n && sum1 === sum) {
@@ -89,10 +89,10 @@ function getAllCombin2(array, n, sum) {
 
 // console.log(getAllCombine(arr, 4, 19, []));
 console.log(getResult(arr, 4, 19));
-// console.log(getAllCombin2(arr, 4, 33))
+// console.log(getAllCombine2(arr, 4, 33))
 
 // 经典回溯法
-function getAllCombin(array, n, sum) { 
+function getAllCombine(array, n, sum) { 
   let res = null;
 
   function isValid(item, track) {

@@ -2,16 +2,17 @@
  * @Description: server.js
  * @Author: Moobye
  * @Date: 2021-04-14 10:57:57
- * @LastEditTime: 2021-04-14 12:04:08
+ * @LastEditTime: 2021-08-04 15:30:53
  * @LastEditors: Moobye
  */
 const http = require('http')
+const port = 8888
 
 http.createServer(function(req, res) {
   console.log('req.url :>> ', req.url);
 
   res.end('123')
-}).listen(8888)
+}).listen(port)
 
 
 // http.createServer(function (request, response) {
@@ -26,4 +27,4 @@ http.createServer(function(req, res) {
 // }).listen(8888);
 
 // 终端打印如下信息
-console.log('Server running at http://127.0.0.1:8888/');
+console.log(`Server running at http://127.0.0.1:${port}/`);

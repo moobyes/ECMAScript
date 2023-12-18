@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style lang="css">
+    * {
+      padding: 0;
+      margin:0;
+    }
+    .sell_box {
+      position: relative;
+      /* background: url('./imgs/bg_1.png') no-repeat; */
+      background-size: cover;
+      /* width: 100vw; */
+      /* height:330vh; */
+      text-align: center;
+    }
+    .text_postion {
+      position: absolute;
+      bottom: 540px;
+      left: 106px;
+      width: 214px;
+      text-align: center;
+      /* border: 1px solid red; */
+    }
+    .sell_text {
+      font-size: 12px;
+      color: red;
+      animation: breathe 0.5s infinite alternate;
+      -webkit-animation: breathe 0.5s infinite alternate;
+      -moz-animation: breathe 0.5s infinite alternate;
+    }
+    @keyframes breathe {
+      from {
+        font-size: 12px;
+      }
+      to {
+        font-size: 13px;
+      }
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="sell_box">
+    <img src="./imgs/bg_1.png" alt="">
+    <p class="text_postion"><span class="sell_text">在此出售免收卖家手续费</span></p>
+    
+  </div>
+</body>
+</html>

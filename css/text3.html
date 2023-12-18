@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link href="./style.css" rel="stylesheet"> -->
+  <style>
+    *{
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑"
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #fee5c0;
+}
+
+.wavy{
+  position: relative;
+  -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2))
+}
+
+.wavy span{
+  position: relative;
+  display: inline-block;
+  color: red;
+  font-size: 2em;
+  animation: animate 1s ease-in-out infinite;
+  animation-delay: calc(.1s*var(--i))
+}
+
+@keyframes animate{
+  0%{
+    transform: translateY(0px)
+  }
+  20%{
+    transform: translateY(-24px)
+  }
+  40%, 100%{
+    transform: translateY(0px)
+  }
+}
+  </style>
+  <title>波浪</title>
+  <link>
+</head>
+<body>
+  <div class="wavy">
+    
+    <span style="--i:1">在</span>
+    <span style="--i:2">此</span>
+    <span style="--i:3">出</span>
+    <span style="--i:4">免</span>
+    <span style="--i:5">卖</span>
+    <span style="--i:6">家</span>
+    <span style="--i:7">手</span>
+    <span style="--i:8">续</span>
+    <span style="--i:9">费</span>
+  </div>
+</body>
+</html>
